@@ -1,7 +1,7 @@
- INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO-
-
-
-
+### DATE: 23-02-2024
+### NAME: Pon Nagarajan M
+### ROLL N0: 212222040115
+### DEPARTMENT: CSE
 
 **AIM**:  To interface a Analog  input (angular displacement sensor POT) and scale the values up on change in the input.
 
@@ -67,19 +67,70 @@ CIRCUIT DIAGRAM
 
 
 **PROGRAM** 
+ int pot;
  
+int led=7;
+
+void setup()
+
+{
+
+  pinMode(led,OUTPUT);
+  
+  Serial.begin(9600);
+  
+}
+
+void loop()
+
+{
+
+  pot=analogRead(A0);
+  
+  //Serial.print("Value=");
+  
+  Serial.println(pot);
+  
+  if(pot>900)
+  
+  {
+  
+  digitalWrite(led,HIGH);
+  
+  delay(500); // Wait for 500 millisecond(s)
+  
+  digitalWrite(led,LOW);
+  
+  delay(500); // Wait for 500 millisecond(s)
+  
+}
+
+  else
+  
+  {
+  
+    digitalWrite(led,LOW);
+    
+    delay(500);
+    
+  }
+  
+}
+
+### GRAPH
+
+![Screenshot 2024-02-23 155514](https://github.com/PonnagarajanMurugan/EXPERIMENT-NO--02-INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO-/assets/119476356/d05d40f9-128a-45f0-8ae8-10df5cb17c3d)
 
 
-
-
-
-
-
-
-
-**
 **Simulation output:** 
-**
+### LED ON
+![Screenshot (68)](https://github.com/PonnagarajanMurugan/EXPERIMENT-NO--02-INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO-/assets/119476356/8b4ad2ea-0bba-4a8e-ac44-aa1c875845c2)
+
+### LED OFF
+![Screenshot (69)](https://github.com/PonnagarajanMurugan/EXPERIMENT-NO--02-INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO-/assets/119476356/2343e1bf-ec55-46b9-b7c0-afde67701ff7)
+
+### CIRCUIT DIAGRAM
+![Screenshot (67)](https://github.com/PonnagarajanMurugan/EXPERIMENT-NO--02-INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO-/assets/119476356/39e3224e-f8af-4135-82af-a48310665bb5)
 
 
 [My image](username.github.com/repository/img/image.jpg)
@@ -90,4 +141,6 @@ CIRCUIT DIAGRAM
 
 
 
-**RESULT: ** Arduino uno analog input functioning is learned and interfaced with digital input switch .
+**RESULT: **
+
+Arduino uno analog input functioning is learned and interfaced with digital input switch .
